@@ -1,6 +1,4 @@
-class WelcomeEmailJob
-  include Sidekiq::Job
-
+class WelcomeEmailJob < ApplicationJob
   def perform(user_name)
     puts "Iniciando o envio de e-mail para #{user_name}..."
     sleep 5

@@ -1,0 +1,15 @@
+<h1>Criar novo usuário</h1>
+
+<% if flash[:notice] %>
+    <p style="color: green;"><%= flash[:notice] %></p>
+<% end %>
+
+<%= form_with url: users_path, scope: :user, local: true do |form| %>
+    <p>
+        <%= form.label :name, "Nome do usuário" %>
+        <%= form.text_field :name %>
+    </p>
+    <p>
+        <%= form.submit "Criar e enviar e-mail" %>
+    </p>
+<% end %>
